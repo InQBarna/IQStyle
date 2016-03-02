@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Fonts</key>
+	<dict>
+		<key>Black</key>
+		<string>Courier-Bold</string>
+		<key>Regular</key>
+		<string>Courier</string>
+		<key>Semibold</key>
+		<string>Courier-BoldOblique</string>
+	</dict>
+	<key>Colors</key>
+	<dict>
+		<key>Background</key>
+		<string>FFFFFFFF</string>
+		<key>Title</key>
+		<string>FFEEEEEE</string>
+		<key>Subtitle</key>
+		<string>FFCCCCCC</string>
+		<key>Text</key>
+		<string>FF343434</string>
+		<key>Navigation</key>
+		<string>FF00FF00</string>
+		<key>NavigationText</key>
+		<string>FF00FFFF</string>
+	</dict>
+</dict>
+</plist>
