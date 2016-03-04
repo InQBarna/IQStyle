@@ -21,42 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <objc/runtime.h>
-#import "IQStyle.h"
-#import "UIButton+IQStyle.h"
+#import <UIKit/UIKit.h>
 
-@implementation UIButton (IQStyle)
-
-#pragma mark -
-#pragma mark Title Color Tag methods
-@dynamic titleColorTag;
-
-- (void)setTitleColorTag:(NSString *)titleColorTag {
-    objc_setAssociatedObject(self, @selector(titleColorTag), titleColorTag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self updateTitleColorFromTag];
-}
-
-- (NSString *)titleColorTag {
-    return objc_getAssociatedObject(self, @selector(titleColorTag));
-}
-
-- (void)updateTitleColorFromTag {
-    NSString *tag = self.titleColorTag;
-    if(!tag) {
-        return;
-    }
-    if([self respondsToSelector:@selector(setTitleColor:forState:)]) {
-        UIColor *color = [IQStyle colorWithTag:tag];
-        if(color) {
-            [(UIButton*)self setTitleColor:color forState:UIControlStateNormal];
-        }
-    }
-}
-
-- (void)applyStyle
-{
-    [self updateTitleColorFromTag];
-    [super applyStyle];
-}
+@interface UIImageView (IQStyle)
+@property (nonatomic, assign) BOOL  useImageAsTemplate;
 
 @end

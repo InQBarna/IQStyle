@@ -20,6 +20,9 @@
 		63A24F031C86F82F00C6AE48 /* UINavigationBar+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EFB1C86F82F00C6AE48 /* UINavigationBar+IQStyle.m */; };
 		63A24F041C86F82F00C6AE48 /* UIView+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EFD1C86F82F00C6AE48 /* UIView+IQStyle.m */; };
 		63A24F061C86F86500C6AE48 /* style.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A24F051C86F86500C6AE48 /* style.plist */; };
+		63A7D54B1C89D35E00635592 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A7D5491C89D35E00635592 /* logo.png */; };
+		63A7D54C1C89D35E00635592 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A7D54A1C89D35E00635592 /* logo@2x.png */; };
+		63A7D54F1C89D40100635592 /* UIImageView+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A7D54E1C89D40100635592 /* UIImageView+IQStyle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,10 @@
 		63A24EFC1C86F82F00C6AE48 /* UIView+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IQStyle.h"; sourceTree = "<group>"; };
 		63A24EFD1C86F82F00C6AE48 /* UIView+IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IQStyle.m"; sourceTree = "<group>"; };
 		63A24F051C86F86500C6AE48 /* style.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = style.plist; sourceTree = "<group>"; };
+		63A7D5491C89D35E00635592 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
+		63A7D54A1C89D35E00635592 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = SOURCE_ROOT; };
+		63A7D54D1C89D40100635592 /* UIImageView+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+IQStyle.h"; sourceTree = "<group>"; };
+		63A7D54E1C89D40100635592 /* UIImageView+IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+IQStyle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,8 @@
 		63A24ED61C86F7E000C6AE48 /* IQStyleSample */ = {
 			isa = PBXGroup;
 			children = (
+				63A7D5491C89D35E00635592 /* logo.png */,
+				63A7D54A1C89D35E00635592 /* logo@2x.png */,
 				63A24F051C86F86500C6AE48 /* style.plist */,
 				63A24EDA1C86F7E000C6AE48 /* AppDelegate.h */,
 				63A24EDB1C86F7E000C6AE48 /* AppDelegate.m */,
@@ -117,6 +126,8 @@
 		63A24EF51C86F82F00C6AE48 /* UIKit+IQStyle */ = {
 			isa = PBXGroup;
 			children = (
+				63A7D54D1C89D40100635592 /* UIImageView+IQStyle.h */,
+				63A7D54E1C89D40100635592 /* UIImageView+IQStyle.m */,
 				63A24EF61C86F82F00C6AE48 /* UIButton+IQStyle.h */,
 				63A24EF71C86F82F00C6AE48 /* UIButton+IQStyle.m */,
 				63A24EF81C86F82F00C6AE48 /* UIColor+IQStyle.h */,
@@ -187,6 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A24EE71C86F7E000C6AE48 /* LaunchScreen.storyboard in Resources */,
+				63A7D54C1C89D35E00635592 /* logo@2x.png in Resources */,
+				63A7D54B1C89D35E00635592 /* logo.png in Resources */,
 				63A24EE41C86F7E000C6AE48 /* Assets.xcassets in Resources */,
 				63A24F061C86F86500C6AE48 /* style.plist in Resources */,
 				63A24EE21C86F7E000C6AE48 /* Main.storyboard in Resources */,
@@ -208,6 +221,7 @@
 				63A24F041C86F82F00C6AE48 /* UIView+IQStyle.m in Sources */,
 				63A24F031C86F82F00C6AE48 /* UINavigationBar+IQStyle.m in Sources */,
 				63A24EFF1C86F82F00C6AE48 /* IQStyleEditorViewController.m in Sources */,
+				63A7D54F1C89D40100635592 /* UIImageView+IQStyle.m in Sources */,
 				63A24F021C86F82F00C6AE48 /* UIColor+IQStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

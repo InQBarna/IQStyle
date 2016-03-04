@@ -23,40 +23,28 @@
 
 #import <objc/runtime.h>
 #import "IQStyle.h"
-#import "UIButton+IQStyle.h"
+#import "UIImageView+IQStyle.h"
 
-@implementation UIButton (IQStyle)
+@implementation UIImageView (IQStyle)
+@dynamic useImageAsTemplate;
 
-#pragma mark -
-#pragma mark Title Color Tag methods
-@dynamic titleColorTag;
-
-- (void)setTitleColorTag:(NSString *)titleColorTag {
-    objc_setAssociatedObject(self, @selector(titleColorTag), titleColorTag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    [self updateTitleColorFromTag];
-}
-
-- (NSString *)titleColorTag {
-    return objc_getAssociatedObject(self, @selector(titleColorTag));
-}
-
-- (void)updateTitleColorFromTag {
-    NSString *tag = self.titleColorTag;
-    if(!tag) {
-        return;
-    }
-    if([self respondsToSelector:@selector(setTitleColor:forState:)]) {
-        UIColor *color = [IQStyle colorWithTag:tag];
-        if(color) {
-            [(UIButton*)self setTitleColor:color forState:UIControlStateNormal];
-        }
-    }
-}
-
-- (void)applyStyle
+- (void)setUseImageAsTemplate:(BOOL)useImageAsTemplate
 {
-    [self updateTitleColorFromTag];
-    [super applyStyle];
+    objc_setAssociatedObject(self, @selector(useImageAsTemplate), @(useImageAsTemplate), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self updateUseImageAsTemplate];
+}
+
+- (BOOL)useImageAsTemplate
+{
+    NSNumber *result = objc_getAssociatedObject(self, @selector(useImageAsTemplate));
+    return result.boolValue;
+}
+
+- (void)updateUseImageAsTemplate {
+    if(self.useImageAsTemplate && self.image.renderingMode != UIImageRenderingModeAlwaysTemplate) {
+        UIImage *img = [self.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.image = img;
+    }
 }
 
 @end

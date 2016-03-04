@@ -83,6 +83,17 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
                                     <userDefinedRuntimeAttribute type="string" keyPath="textColorTag" value="Text"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-Pc-kcW">
+                                <rect key="frame" x="225" y="301" width="150" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="dJ3-9x-Sip"/>
+                                    <constraint firstAttribute="height" constant="71" id="prb-O9-evz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useImageAsTemplate" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tintTag" value="Navigation"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -91,13 +102,15 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
                             <constraint firstItem="AAP-uJ-YBp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="N03-BH-UXy"/>
                             <constraint firstItem="sJ4-X2-iUF" firstAttribute="top" secondItem="AAP-uJ-YBp" secondAttribute="bottom" constant="8" id="PiD-fX-cAT"/>
                             <constraint firstItem="qLG-Ox-qCC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Uf9-JW-BsK"/>
+                            <constraint firstItem="EHB-Pc-kcW" firstAttribute="top" secondItem="sJ4-X2-iUF" secondAttribute="bottom" constant="8" id="VI0-0P-139"/>
+                            <constraint firstItem="EHB-Pc-kcW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WLh-7h-3KD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cTM-iA-eat" secondAttribute="bottom" constant="20" id="Zra-bF-XXq"/>
                             <constraint firstItem="cTM-iA-eat" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aXn-wN-WHa"/>
                             <constraint firstItem="sJ4-X2-iUF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bCQ-ZI-Uh4"/>
                             <constraint firstItem="AAP-uJ-YBp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gpm-rZ-Tko"/>
-                            <constraint firstItem="cTM-iA-eat" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sJ4-X2-iUF" secondAttribute="bottom" constant="20" id="obb-Nz-cwE"/>
                             <constraint firstItem="qLG-Ox-qCC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="rpy-A4-Ua5"/>
                             <constraint firstItem="qLG-Ox-qCC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="yaX-y5-JP4"/>
+                            <constraint firstItem="cTM-iA-eat" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EHB-Pc-kcW" secondAttribute="bottom" constant="8" id="z9a-SQ-wxC"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="backgroundColorTag" value="Background"/>
@@ -110,4 +123,7 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
             <point key="canvasLocation" x="-65" y="178"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.png" width="150" height="71"/>
+    </resources>
 </document>
