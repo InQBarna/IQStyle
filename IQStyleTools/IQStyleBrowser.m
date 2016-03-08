@@ -83,7 +83,10 @@
                                       securityIdentity:nil
                                   encryptionPreference:MCEncryptionNone];
         self.session.delegate = self;
-        [self.browser invitePeer:peerID toSession:self.session withContext:nil timeout:30.0f];
+        [self.browser invitePeer:peerID
+                       toSession:self.session
+                     withContext:nil
+                         timeout:10.0f];
     }
 }
 
@@ -98,7 +101,17 @@
     [d setObject:peerID.displayName forKey:@"display_name"];
     
     IQStyleClientInfo *serviceInfo = [[IQStyleClientInfo alloc] initWithDictionary:d.copy];
+
     if(serviceInfo.identifier) {
+        
+        NSArray *tmp = self.peers.allKeys.copy;
+        for(MCPeerID *pID in tmp) {
+            IQStyleClientInfo *info = [self.peers objectForKey:pID];
+            if([info.identifier isEqualToString:serviceInfo.identifier]) {
+                [self.peers removeObjectForKey:pID];
+            }
+        }
+        
         [self.peers setObject:serviceInfo forKey:peerID];
         [self.delegate serviceBrowserDidUpdateList:self];
     } else {
