@@ -21,6 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <SVProgressHUD.h>
 #import "DiscoveryViewController.h"
 #import "IQStyleBrowser.h"
 #import "EditorViewController.h"
@@ -79,9 +80,12 @@ NS_ASSUME_NONNULL_END
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     IQStyleClientInfo *info = [self.browser.list objectAtIndex:indexPath.row];
+    
+    [SVProgressHUD showWithStatus:@"Connecting…" maskType:SVProgressHUDMaskTypeClear];
     [self.browser connectToClient:info
                        completion:^(MCPeerID * _Nonnull peerID, MCSession * _Nonnull session, NSError * _Nonnull error)
     {
+        [SVProgressHUD dismiss];
         if(session) {
             EditorViewController *vc = [[EditorViewController alloc] init];
             [vc setupWithPeerID:peerID session:session];

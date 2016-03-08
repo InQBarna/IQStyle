@@ -81,42 +81,50 @@ NS_ASSUME_NONNULL_END
 - (void)editColorAtIndexPath:(NSIndexPath*)indexPath
 {
     NSString *tag = [_tags objectAtIndex:indexPath.row];
-    NSString *text = [_styleDictionary objectForKey:tag];
+    NSString *hex = [_styleDictionary objectForKey:tag];
     
-    UIAlertController *a = [UIAlertController alertControllerWithTitle:@"Enter new color"
-                                                               message:nil
-                                                        preferredStyle:UIAlertControllerStyleAlert];
+    BOOL handle = YES;
+    if([_delegate respondsToSelector:@selector(styleEditor:shouldEditiColor:forTag:)]) {
+        UIColor *color = [UIColor colorWithHexString:hex];
+        handle = [_delegate styleEditor:self shouldEditiColor:color forTag:tag];
+    }
     
-    __block __weak UITextField *tf;
-    [a addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        tf = textField;
-        textField.delegate = nil;
-        textField.text = text;
-        textField.textAlignment = NSTextAlignmentLeft;
-        textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-        textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        textField.autocorrectionType = UITextAutocorrectionTypeNo;
-        textField.spellCheckingType = UITextSpellCheckingTypeNo;
-    }];
-    
-    __weak typeof(self) welf = self;
-    [a addAction:[UIAlertAction actionWithTitle:@"Ok"
-                                          style:UIAlertActionStyleDefault
-                                        handler:^(UIAlertAction *action)
-                  {
-                      UIColor *newColor = [UIColor colorWithHexString:tf.text];
-                      if(newColor) {
-                          [welf.delegate styleEditor:welf didSelectColor:newColor forTag:tag];
-                      }
-                  }]];
-    
-    [a addAction:[UIAlertAction actionWithTitle:@"Cancel"
-                                          style:UIAlertActionStyleCancel
-                                        handler:^(UIAlertAction *action)
-                  {
-                  }]];
-    
-    [self presentViewController:a animated:YES completion:nil];
+    if(handle) {
+        UIAlertController *a = [UIAlertController alertControllerWithTitle:@"Enter new color"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+        
+        __block __weak UITextField *tf;
+        [a addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            tf = textField;
+            textField.delegate = nil;
+            textField.text = hex;
+            textField.textAlignment = NSTextAlignmentLeft;
+            textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+            textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+            textField.autocorrectionType = UITextAutocorrectionTypeNo;
+            textField.spellCheckingType = UITextSpellCheckingTypeNo;
+        }];
+        
+        __weak typeof(self) welf = self;
+        [a addAction:[UIAlertAction actionWithTitle:@"Ok"
+                                              style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction *action)
+                      {
+                          UIColor *newColor = [UIColor colorWithHexString:tf.text];
+                          if(newColor) {
+                              [welf.delegate styleEditor:welf didSelectColor:newColor forTag:tag];
+                          }
+                      }]];
+        
+        [a addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                              style:UIAlertActionStyleCancel
+                                            handler:^(UIAlertAction *action)
+                      {
+                      }]];
+        
+        [self presentViewController:a animated:YES completion:nil];
+    }
 }
 
 #pragma mark -

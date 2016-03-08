@@ -24,20 +24,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol IQStyleEditorViewControllerDelegate;
-
-@interface IQStyleEditorViewController : UITableViewController
-@property (nonatomic, weak, nullable) id<IQStyleEditorViewControllerDelegate>   delegate;
-@property (nonatomic, copy, nullable) NSDictionary                              *styleDictionary;
-@end
-
-@protocol IQStyleEditorViewControllerDelegate <NSObject>
-@required
-
-
-- (void)styleEditor:(IQStyleEditorViewController*)editor didSelectColor:(UIColor*)color forTag:(NSString*)tag;
-
-@optional
-- (BOOL)styleEditor:(IQStyleEditorViewController*)editor shouldEditiColor:(UIColor*)color forTag:(NSString*)tag;
+@interface PickerViewController : UIViewController
+- (void)setupWithColor:(UIColor*)color completion:(void(^)(UIColor *color))block;
 @end
 NS_ASSUME_NONNULL_END

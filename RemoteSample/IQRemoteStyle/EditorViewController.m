@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 
 #import "EditorViewController.h"
+#import "PickerViewController.h"
 #import "IQStyle.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -90,6 +91,21 @@ NS_ASSUME_NONNULL_END
 - (void)styleEditor:(IQStyleEditorViewController*)editor didSelectColor:(UIColor*)color forTag:(NSString*)tag
 {
     [self sendColor:color.toString forTag:tag];
+}
+
+- (BOOL)styleEditor:(IQStyleEditorViewController *)editor shouldEditiColor:color forTag:(NSString *)tag
+{
+    PickerViewController *vc = [[PickerViewController alloc] init];
+    vc.title = tag;
+    [vc setupWithColor:color completion:^(UIColor * _Nonnull editedColor) {
+        [self sendColor:editedColor.toString forTag:tag];
+    }];
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    nc.navigationBar.translucent = NO;
+    
+    [self presentViewController:nc animated:YES completion:nil];
+    return NO;
 }
 
 #pragma mark -

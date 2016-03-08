@@ -1,0 +1,13 @@
+PODS:
+  - Color-Picker-for-iOS (2.0.2)
+  - SVProgressHUD (1.1.3)
+
+DEPENDENCIES:
+  - Color-Picker-for-iOS (~> 2.0)
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+
+COCOAPODS: 0.39.0
