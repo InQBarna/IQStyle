@@ -32,12 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @protocol IQStyleEditorViewControllerDelegate <NSObject>
-@required
-
-
-- (void)styleEditor:(IQStyleEditorViewController*)editor didSelectColor:(UIColor*)color forTag:(NSString*)tag;
-
 @optional
-- (BOOL)styleEditor:(IQStyleEditorViewController*)editor shouldEditiColor:(UIColor*)color forTag:(NSString*)tag;
+- (void)styleEditor:(IQStyleEditorViewController*)editor didSetColor:(UIColor*)color forTag:(NSString*)tag;
+- (BOOL)styleEditor:(IQStyleEditorViewController*)editor shouldEditColor:(UIColor*)color forTag:(NSString*)tag;
 @end
 NS_ASSUME_NONNULL_END

@@ -84,9 +84,9 @@ NS_ASSUME_NONNULL_END
     NSString *hex = [_styleDictionary objectForKey:tag];
     
     BOOL handle = YES;
-    if([_delegate respondsToSelector:@selector(styleEditor:shouldEditiColor:forTag:)]) {
+    if([_delegate respondsToSelector:@selector(styleEditor:shouldEditColor:forTag:)]) {
         UIColor *color = [UIColor colorWithHexString:hex];
-        handle = [_delegate styleEditor:self shouldEditiColor:color forTag:tag];
+        handle = [_delegate styleEditor:self shouldEditColor:color forTag:tag];
     }
     
     if(handle) {
@@ -106,14 +106,15 @@ NS_ASSUME_NONNULL_END
             textField.spellCheckingType = UITextSpellCheckingTypeNo;
         }];
         
-        __weak typeof(self) welf = self;
         [a addAction:[UIAlertAction actionWithTitle:@"Ok"
                                               style:UIAlertActionStyleDefault
                                             handler:^(UIAlertAction *action)
                       {
                           UIColor *newColor = [UIColor colorWithHexString:tf.text];
-                          if(newColor) {
-                              [welf.delegate styleEditor:welf didSelectColor:newColor forTag:tag];
+                          [IQStyle setColor:newColor forTag:tag];
+                          self.styleDictionary = [IQStyle styleDictionary];
+                          if([self.delegate respondsToSelector:@selector(styleEditor:didSetColor:forTag:)]) {
+                              [self.delegate styleEditor:self didSetColor:newColor forTag:tag];
                           }
                       }]];
         
