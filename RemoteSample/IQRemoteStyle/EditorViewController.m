@@ -93,7 +93,7 @@ NS_ASSUME_NONNULL_END
     [self sendColor:color.toString forTag:tag];
 }
 
-- (BOOL)styleEditor:(IQStyleEditorViewController *)editor shouldEditiColor:color forTag:(NSString *)tag
+- (BOOL)styleEditor:(IQStyleEditorViewController*)editor shouldEditColor:(UIColor*)color forTag:(NSString*)tag
 {
     PickerViewController *vc = [[PickerViewController alloc] init];
     vc.title = tag;
