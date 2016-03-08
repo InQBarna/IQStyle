@@ -21,8 +21,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
+#import <Foundation/Foundation.h>
+#import "IQStyleClientInfo.h"
 
-@interface IQStyleSettingsViewController : UITableViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@protocol IQStyleBrowserDelegate;
+
+@interface IQStyleBrowser : NSObject
+@property (nullable, nonatomic, weak) id<IQStyleBrowserDelegate>  delegate;
+
+- (void)startBrowsing;
+- (NSArray<IQStyleClientInfo*>*)list;
+- (void)stopBrowsing;
+
+- (void)connectToClient:(IQStyleClientInfo*)info completion:(void(^)(MCPeerID *peerID, MCSession *session, NSError *error))block;
 @end
+
+@protocol IQStyleBrowserDelegate <NSObject>
+@required
+- (void)serviceBrowserDidUpdateList:(IQStyleBrowser*)browser;
+@end
+
+NS_ASSUME_NONNULL_END

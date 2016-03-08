@@ -23,7 +23,7 @@
 
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 #import "IQStyleBrowser.h"
-
+#import "IQStyleAdvertiser.h"
 
 @interface IQStyleBrowser()<MCNearbyServiceBrowserDelegate, MCSessionDelegate>
 @property (nonatomic, strong) MCNearbyServiceBrowser    *browser;
@@ -34,15 +34,15 @@
 
 @implementation IQStyleBrowser
 
-- (id)initWithServiceType:(NSString*)serviceType
-              displayName:(NSString*)displayName
+- (id)init
 {
     self = [super init];
     if(self) {
         self.peers = [NSMutableDictionary dictionary];
+        NSString *displayName = @"Editor";
         MCPeerID *peerID = [[MCPeerID alloc] initWithDisplayName:displayName];
         self.browser = [[MCNearbyServiceBrowser alloc] initWithPeer:peerID
-                                                        serviceType:serviceType];
+                                                        serviceType:IQStyleServiceName];
         self.browser.delegate = self;
     }
     return self;

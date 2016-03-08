@@ -19,31 +19,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="vFH-RI-iQW"/>
-                    <connections>
-                        <segue destination="E9a-ZC-6c8" kind="show" identifier="editShow" id="nRZ-pV-JDV"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gp7-GE-bbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="393" y="267"/>
-        </scene>
-        <!--Editor View Controller-->
-        <scene sceneID="Mqc-hz-dAg">
-            <objects>
-                <tableViewController storyboardIdentifier="editorViewController" id="E9a-ZC-6c8" customClass="EditorViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pm3-3c-7ZT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="E9a-ZC-6c8" id="ypO-aP-4sM"/>
-                            <outlet property="delegate" destination="E9a-ZC-6c8" id="Mlb-em-Ha2"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F9G-hV-eXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1100" y="267"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rWZ-hm-yU2">

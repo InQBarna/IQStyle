@@ -30,7 +30,7 @@
 
 @implementation AppDelegate
 
-+ (void)load {
++ (void)initialize {
     NSURL *styleUrl = [[NSBundle mainBundle] URLForResource:@"style" withExtension:@"plist"];
     NSDictionary *style = [NSDictionary dictionaryWithContentsOfURL:styleUrl];
     

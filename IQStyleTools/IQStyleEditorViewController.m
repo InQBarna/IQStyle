@@ -24,6 +24,12 @@
 #import "IQStyleEditorViewController.h"
 #import "IQStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+@interface IQStyleEditorViewController()
+@property (nonatomic, strong, nullable) NSArray     *tags;
+@end
+NS_ASSUME_NONNULL_END
+
 @implementation IQStyleEditorViewController
 
 #pragma mark -
@@ -39,7 +45,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if(self.navigationController) {
+    if(self.navigationController == self.parentViewController && self.navigationController) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
                                                                                   style:UIBarButtonItemStyleDone
                                                                                  target:self
@@ -49,6 +55,14 @@
 
 #pragma mark -
 #pragma mark IQStyleEditorViewController methods
+
+- (void)setStyleDictionary:(NSDictionary *)styleDictionary
+{
+    NSDictionary *colors = [styleDictionary objectForKey:@"Colors"];
+    _tags = [colors.allKeys sortedArrayUsingSelector:@selector(compare:)];
+    _styleDictionary = colors;
+    [self.tableView reloadData];
+}
 
 - (void)dismiss:(id)sender
 {
@@ -64,49 +78,10 @@
     return image;
 }
 
-#pragma mark -
-#pragma mark UITableViewDataSource methods
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [IQStyle colorTags].count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *reuseIdentifier = @"styleCell";
-    
-    UITableViewCell *result = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    if(!result) {
-        result = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                        reuseIdentifier:reuseIdentifier];
-        result.imageView.layer.borderColor = [UIColor blackColor].CGColor;
-        result.imageView.layer.borderWidth = 1.0f;
-    }
-    
-    NSString *tag = [[IQStyle colorTags] objectAtIndex:indexPath.row];
-    UIColor *color = [IQStyle colorWithTag:tag];
-    result.textLabel.text = tag;
-    result.detailTextLabel.text = [color toString];
-    result.imageView.image = [self.class imageWithColor:color rect:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)];
-    
-    return result;
-}
-
-#pragma mark -
-#pragma mark UITableViewDelegate methods
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self editColorAtIndexPath:indexPath];
-}
-
 - (void)editColorAtIndexPath:(NSIndexPath*)indexPath
 {
-    NSString *tag = [[IQStyle colorTags] objectAtIndex:indexPath.row];
-    UIColor *color = [IQStyle colorWithTag:tag];
-    NSString *text = [color toString];
+    NSString *tag = [_tags objectAtIndex:indexPath.row];
+    NSString *text = [_styleDictionary objectForKey:tag];
     
     UIAlertController *a = [UIAlertController alertControllerWithTitle:@"Enter new color"
                                                                message:nil
@@ -124,16 +99,14 @@
         textField.spellCheckingType = UITextSpellCheckingTypeNo;
     }];
     
-    __weak typeof(self) welf = self;    
+    __weak typeof(self) welf = self;
     [a addAction:[UIAlertAction actionWithTitle:@"Ok"
                                           style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction *action)
                   {
                       UIColor *newColor = [UIColor colorWithHexString:tf.text];
                       if(newColor) {
-                          [IQStyle setColor:newColor forTag:tag];
-                          [welf.tableView reloadRowsAtIndexPaths:@[indexPath]
-                                           withRowAnimation:UITableViewRowAnimationAutomatic];
+                          [welf.delegate styleEditor:welf didSelectColor:newColor forTag:tag];
                       }
                   }]];
     
@@ -144,6 +117,45 @@
                   }]];
     
     [self presentViewController:a animated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark UITableViewDataSource methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _tags.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *reuseIdentifier = @"styleCell";
+    
+    UITableViewCell *result = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if(!result) {
+        result = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                        reuseIdentifier:reuseIdentifier];
+        result.imageView.layer.borderColor = [UIColor blackColor].CGColor;
+        result.imageView.layer.borderWidth = 1.0f;
+    }
+    
+    NSString *tag = [_tags objectAtIndex:indexPath.row];
+    NSString *hex = [_styleDictionary objectForKey:tag];
+    UIColor *color = [UIColor colorWithHexString:hex];
+    result.textLabel.text = tag;
+    result.detailTextLabel.text = hex;
+    result.imageView.image = [self.class imageWithColor:color rect:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)];
+    
+    return result;
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self editColorAtIndexPath:indexPath];
 }
 
 @end

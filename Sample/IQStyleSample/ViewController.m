@@ -24,11 +24,13 @@
 #import "ViewController.h"
 #import "IQStyle.h"
 #import "IQStyleEditorViewController.h"
-#import "IQStyleSettingsViewController.h"
+#import "IQStyleAdvertiser.h"
 
-@interface ViewController ()
-
+NS_ASSUME_NONNULL_BEGIN
+@interface ViewController ()<IQStyleEditorViewControllerDelegate>
+@property (nonatomic, strong, nullable) IQStyleAdvertiser   *advertiser;
 @end
+NS_ASSUME_NONNULL_END
 
 @implementation ViewController
 
@@ -47,10 +49,10 @@
     [self registerForStyleChanges];
     self.title = @"MOVIES";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Config"
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Enable"
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
-                                                                             action:@selector(openSettings:)];
+                                                                             action:@selector(toggleRemote:)];
 }
 
 #pragma mark -
@@ -59,14 +61,23 @@
 - (IBAction)changeAction:(id)sender
 {
     IQStyleEditorViewController *vc = [[IQStyleEditorViewController alloc] init];
+    vc.delegate = self;
+    vc.styleDictionary = [[IQStyle styleDictionary] objectForKey:@"Colors"];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nc animated:YES completion:nil];
 }
 
-- (void)openSettings:(id)sender
+- (void)toggleRemote:(id)sender
 {
-    IQStyleSettingsViewController *vc = [[IQStyleSettingsViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    if(self.advertiser) {
+        [self.advertiser stopAdvertising];
+        self.advertiser = nil;
+        self.navigationItem.rightBarButtonItem.title = @"Eanble";
+    } else {
+        self.advertiser = [[IQStyleAdvertiser alloc] init];
+        [self.advertiser startAdvertising];
+        self.navigationItem.rightBarButtonItem.title = @"Disable";
+    }
 }
 
 #pragma mark -
@@ -77,6 +88,17 @@
         [self.navigationController.navigationBar performSelector:@selector(applyStyle)];
     }
     [self.view performSelector:@selector(applyStyle)];
+}
+
+#pragma mark -
+#pragma mark IQStyleEditorViewControllerDelegate methods
+
+- (void)styleEditor:(IQStyleEditorViewController*)editor
+     didSelectColor:(UIColor*)color
+             forTag:(NSString*)tag
+{
+    [IQStyle setColor:color forTag:tag];
+    editor.styleDictionary = [[IQStyle styleDictionary] objectForKey:@"Colors"];
 }
 
 @end

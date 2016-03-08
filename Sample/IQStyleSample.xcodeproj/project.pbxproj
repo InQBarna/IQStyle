@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63528B411C8EAD92008E7123 /* IQStyleAdvertiser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B3E1C8EAD92008E7123 /* IQStyleAdvertiser.m */; };
-		63528B421C8EAD92008E7123 /* IQStyleSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B401C8EAD92008E7123 /* IQStyleSettingsViewController.m */; };
+		63528B9A1C8EF3DF008E7123 /* IQStyleAdvertiser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B911C8EF3DE008E7123 /* IQStyleAdvertiser.m */; };
+		63528B9B1C8EF3DF008E7123 /* IQStyleBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B931C8EF3DE008E7123 /* IQStyleBrowser.m */; };
+		63528B9C1C8EF3DF008E7123 /* IQStyleClientInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B951C8EF3DE008E7123 /* IQStyleClientInfo.m */; };
+		63528B9D1C8EF3DF008E7123 /* IQStyleEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B971C8EF3DF008E7123 /* IQStyleEditorViewController.m */; };
 		63A24ED91C86F7E000C6AE48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24ED81C86F7E000C6AE48 /* main.m */; };
 		63A24EDC1C86F7E000C6AE48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EDB1C86F7E000C6AE48 /* AppDelegate.m */; };
 		63A24EDF1C86F7E000C6AE48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EDE1C86F7E000C6AE48 /* ViewController.m */; };
@@ -16,7 +18,6 @@
 		63A24EE41C86F7E000C6AE48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A24EE31C86F7E000C6AE48 /* Assets.xcassets */; };
 		63A24EE71C86F7E000C6AE48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A24EE51C86F7E000C6AE48 /* LaunchScreen.storyboard */; };
 		63A24EFE1C86F82F00C6AE48 /* IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EF01C86F82F00C6AE48 /* IQStyle.m */; };
-		63A24EFF1C86F82F00C6AE48 /* IQStyleEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EF21C86F82F00C6AE48 /* IQStyleEditorViewController.m */; };
 		63A24F011C86F82F00C6AE48 /* UIButton+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EF71C86F82F00C6AE48 /* UIButton+IQStyle.m */; };
 		63A24F021C86F82F00C6AE48 /* UIColor+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EF91C86F82F00C6AE48 /* UIColor+IQStyle.m */; };
 		63A24F031C86F82F00C6AE48 /* UINavigationBar+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EFB1C86F82F00C6AE48 /* UINavigationBar+IQStyle.m */; };
@@ -28,10 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63528B3D1C8EAD92008E7123 /* IQStyleAdvertiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleAdvertiser.h; sourceTree = "<group>"; };
-		63528B3E1C8EAD92008E7123 /* IQStyleAdvertiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleAdvertiser.m; sourceTree = "<group>"; };
-		63528B3F1C8EAD92008E7123 /* IQStyleSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleSettingsViewController.h; sourceTree = "<group>"; };
-		63528B401C8EAD92008E7123 /* IQStyleSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleSettingsViewController.m; sourceTree = "<group>"; };
+		63528B901C8EF3DE008E7123 /* IQStyleAdvertiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleAdvertiser.h; sourceTree = "<group>"; };
+		63528B911C8EF3DE008E7123 /* IQStyleAdvertiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleAdvertiser.m; sourceTree = "<group>"; };
+		63528B921C8EF3DE008E7123 /* IQStyleBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleBrowser.h; sourceTree = "<group>"; };
+		63528B931C8EF3DE008E7123 /* IQStyleBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleBrowser.m; sourceTree = "<group>"; };
+		63528B941C8EF3DE008E7123 /* IQStyleClientInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleClientInfo.h; sourceTree = "<group>"; };
+		63528B951C8EF3DE008E7123 /* IQStyleClientInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleClientInfo.m; sourceTree = "<group>"; };
+		63528B961C8EF3DE008E7123 /* IQStyleEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleEditorViewController.h; sourceTree = "<group>"; };
+		63528B971C8EF3DF008E7123 /* IQStyleEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleEditorViewController.m; sourceTree = "<group>"; };
 		63A24ED41C86F7E000C6AE48 /* IQStyleSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IQStyleSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A24ED81C86F7E000C6AE48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63A24EDA1C86F7E000C6AE48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,8 +49,6 @@
 		63A24EE81C86F7E000C6AE48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A24EEF1C86F82F00C6AE48 /* IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyle.h; sourceTree = "<group>"; };
 		63A24EF01C86F82F00C6AE48 /* IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyle.m; sourceTree = "<group>"; };
-		63A24EF11C86F82F00C6AE48 /* IQStyleEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleEditorViewController.h; sourceTree = "<group>"; };
-		63A24EF21C86F82F00C6AE48 /* IQStyleEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleEditorViewController.m; sourceTree = "<group>"; };
 		63A24EF61C86F82F00C6AE48 /* UIButton+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+IQStyle.h"; sourceTree = "<group>"; };
 		63A24EF71C86F82F00C6AE48 /* UIButton+IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+IQStyle.m"; sourceTree = "<group>"; };
 		63A24EF81C86F82F00C6AE48 /* UIColor+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+IQStyle.h"; sourceTree = "<group>"; };
@@ -72,10 +75,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63528B8F1C8EF3DE008E7123 /* IQStyleTools */ = {
+			isa = PBXGroup;
+			children = (
+				63528B901C8EF3DE008E7123 /* IQStyleAdvertiser.h */,
+				63528B911C8EF3DE008E7123 /* IQStyleAdvertiser.m */,
+				63528B921C8EF3DE008E7123 /* IQStyleBrowser.h */,
+				63528B931C8EF3DE008E7123 /* IQStyleBrowser.m */,
+				63528B941C8EF3DE008E7123 /* IQStyleClientInfo.h */,
+				63528B951C8EF3DE008E7123 /* IQStyleClientInfo.m */,
+				63528B961C8EF3DE008E7123 /* IQStyleEditorViewController.h */,
+				63528B971C8EF3DF008E7123 /* IQStyleEditorViewController.m */,
+			);
+			name = IQStyleTools;
+			path = ../IQStyleTools;
+			sourceTree = "<group>";
+		};
 		63A24ECB1C86F7E000C6AE48 = {
 			isa = PBXGroup;
 			children = (
 				63A24EEE1C86F82F00C6AE48 /* IQStyle */,
+				63528B8F1C8EF3DE008E7123 /* IQStyleTools */,
 				63A24ED61C86F7E000C6AE48 /* IQStyleSample */,
 				63A24ED51C86F7E000C6AE48 /* Products */,
 			);
@@ -119,14 +139,8 @@
 		63A24EEE1C86F82F00C6AE48 /* IQStyle */ = {
 			isa = PBXGroup;
 			children = (
-				63528B3D1C8EAD92008E7123 /* IQStyleAdvertiser.h */,
-				63528B3E1C8EAD92008E7123 /* IQStyleAdvertiser.m */,
-				63528B3F1C8EAD92008E7123 /* IQStyleSettingsViewController.h */,
-				63528B401C8EAD92008E7123 /* IQStyleSettingsViewController.m */,
 				63A24EEF1C86F82F00C6AE48 /* IQStyle.h */,
 				63A24EF01C86F82F00C6AE48 /* IQStyle.m */,
-				63A24EF11C86F82F00C6AE48 /* IQStyleEditorViewController.h */,
-				63A24EF21C86F82F00C6AE48 /* IQStyleEditorViewController.m */,
 				63A24EF51C86F82F00C6AE48 /* UIKit+IQStyle */,
 			);
 			name = IQStyle;
@@ -223,16 +237,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63528B411C8EAD92008E7123 /* IQStyleAdvertiser.m in Sources */,
 				63A24EDF1C86F7E000C6AE48 /* ViewController.m in Sources */,
 				63A24EDC1C86F7E000C6AE48 /* AppDelegate.m in Sources */,
+				63528B9A1C8EF3DF008E7123 /* IQStyleAdvertiser.m in Sources */,
 				63A24ED91C86F7E000C6AE48 /* main.m in Sources */,
+				63528B9C1C8EF3DF008E7123 /* IQStyleClientInfo.m in Sources */,
 				63A24EFE1C86F82F00C6AE48 /* IQStyle.m in Sources */,
+				63528B9B1C8EF3DF008E7123 /* IQStyleBrowser.m in Sources */,
 				63A24F011C86F82F00C6AE48 /* UIButton+IQStyle.m in Sources */,
 				63A24F041C86F82F00C6AE48 /* UIView+IQStyle.m in Sources */,
+				63528B9D1C8EF3DF008E7123 /* IQStyleEditorViewController.m in Sources */,
 				63A24F031C86F82F00C6AE48 /* UINavigationBar+IQStyle.m in Sources */,
-				63A24EFF1C86F82F00C6AE48 /* IQStyleEditorViewController.m in Sources */,
-				63528B421C8EAD92008E7123 /* IQStyleSettingsViewController.m in Sources */,
 				63A7D54F1C89D40100635592 /* UIImageView+IQStyle.m in Sources */,
 				63A24F021C86F82F00C6AE48 /* UIColor+IQStyle.m in Sources */,
 			);

@@ -21,19 +21,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol IQStyleEditorViewControllerDelegate;
 
-@interface IQStyleAdvertiser : NSObject
+@interface IQStyleEditorViewController : UITableViewController
+@property (nonatomic, weak, nullable) id<IQStyleEditorViewControllerDelegate>   delegate;
+@property (nonatomic, copy, nullable) NSDictionary                              *styleDictionary;
+@end
 
-- (id)initWithServiceType:(NSString*)serviceType
-               identifier:(NSString*)identifier
-              displayName:(NSString*)displayName;
-
-- (void)startAdvertising;
-- (void)stopAdvertising;
-
+@protocol IQStyleEditorViewControllerDelegate <NSObject>
+@required
+- (void)styleEditor:(IQStyleEditorViewController*)editor didSelectColor:(UIColor*)color forTag:(NSString*)tag;
 @end
 
 NS_ASSUME_NONNULL_END

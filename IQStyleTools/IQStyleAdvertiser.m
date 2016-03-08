@@ -28,10 +28,13 @@
 #import "IQStyleAdvertiser.h"
 #import "IQStyle.h"
 
+NSString *const IQStyleServiceName = @"iq-style-remote";
+
 @interface IQStyleAdvertiser ()<MCNearbyServiceAdvertiserDelegate, MCSessionDelegate>
 @property (nonatomic, strong) MCNearbyServiceAdvertiser *advertiser;
 @property (nonatomic, strong, nullable) MCSession       *session;
 @property (nonatomic, strong, nullable) MCPeerID        *remotePeerID;
+@property (nonatomic, assign) BOOL  isAdvertising;
 @end
 
 @implementation IQStyleAdvertiser
@@ -51,26 +54,28 @@
 #pragma mark -
 #pragma mark Advertiser methods
 
-- (id)initWithServiceType:(NSString*)serviceType
-               identifier:(NSString*)identifier
-              displayName:(NSString*)displayName
+- (id)init
 {
-    NSParameterAssert(serviceType);
-    NSParameterAssert(identifier);
-    NSParameterAssert(displayName);
-    
-    self = [self init];
+    self = [super init];
     if(self) {
+        NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+        if(!appName) {
+            appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+        }
+        
+        NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+
+        NSString *displayName = [NSString stringWithFormat:@"%@ - %@", appName, appVersion];
         MCPeerID *peerID = [[MCPeerID alloc] initWithDisplayName:displayName];
         NSMutableDictionary *discoveryInfo = [NSMutableDictionary dictionary];
         
-        [discoveryInfo setObject:identifier forKey:@"id"];
+        [discoveryInfo setObject:[UIDevice currentDevice].identifierForVendor.UUIDString forKey:@"id"];
         [discoveryInfo setObject:[UIDevice currentDevice].name forKey:@"device_name"];
         [discoveryInfo setObject:[UIDevice currentDevice].model forKey:@"device_model"];
         
         self.advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:peerID
                                                             discoveryInfo:discoveryInfo.copy
-                                                              serviceType:serviceType];
+                                                              serviceType:IQStyleServiceName];
         self.advertiser.delegate = self;
     }
     return self;
@@ -79,16 +84,18 @@
 - (void)startAdvertising
 {
     [_advertiser startAdvertisingPeer];
+    _isAdvertising = YES;
 }
 
 - (void)stopAdvertising {
     [_advertiser stopAdvertisingPeer];
+    _isAdvertising = NO;
 }
+
 - (void)sendStyle
 {
     NSError *error;
-    NSDictionary *colors = [[IQStyle styleDictionary] objectForKey:@"Colors"];
-    NSData *data = [NSJSONSerialization dataWithJSONObject:colors
+    NSData *data = [NSJSONSerialization dataWithJSONObject:[IQStyle styleDictionary]
                                                    options:0
                                                      error:&error];
     
@@ -103,28 +110,25 @@
 #pragma mark -
 #pragma mark MCNearbyServiceAdvertiserDelegate methods
 
-// Incoming invitation request.  Call the invitationHandler block with YES
-// and a valid session to connect the inviting peer to the session.
 - (void)            advertiser:(MCNearbyServiceAdvertiser *)advertiser
   didReceiveInvitationFromPeer:(MCPeerID *)peerID
                    withContext:(nullable NSData *)context
              invitationHandler:(void (^)(BOOL accept, MCSession *session))invitationHandler
 {
-    MCSession *session = [[MCSession alloc] initWithPeer:advertiser.myPeerID
-                                        securityIdentity:nil
-                                    encryptionPreference:MCEncryptionNone];
-    session.delegate = self;
-    self.session = session;
+    self.session = [[MCSession alloc] initWithPeer:advertiser.myPeerID
+                                  securityIdentity:nil
+                              encryptionPreference:MCEncryptionNone];
+    self.session.delegate = self;
     self.remotePeerID = peerID;
     
-    invitationHandler(YES, session);
+    invitationHandler(YES, self.session);
 }
 
-// Advertising did not start due to an error.
 - (void)        advertiser:(MCNearbyServiceAdvertiser *)advertiser
 didNotStartAdvertisingPeer:(NSError *)error
 {
     NSLog(@"[ERROR] didNotStartAdvertisingPeer: %@", error.localizedDescription);
+    _isAdvertising = NO;
 }
 
 #pragma mark -
@@ -168,11 +172,11 @@ didNotStartAdvertisingPeer:(NSError *)error
     
     if(d) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            for(NSString *key in d.allKeys) {
-                NSString *color = [d objectForKey:key];
-                UIColor *c = [UIColor colorWithHexString:color];
-                if(key && c) {
-                    [IQStyle setColor:c forTag:key];
+            for(NSString *tag in d.allKeys) {
+                NSString *hex = [d objectForKey:tag];
+                UIColor *c = [UIColor colorWithHexString:hex];
+                if(tag && c) {
+                    [IQStyle setColor:c forTag:tag];
                 }
             }
             [self sendStyle];
