@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63528B511C8EAED3008E7123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B501C8EAED3008E7123 /* main.m */; };
+		63528B541C8EAED3008E7123 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B531C8EAED3008E7123 /* AppDelegate.m */; };
+		63528B571C8EAED3008E7123 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B561C8EAED3008E7123 /* ViewController.m */; };
+		63528B5A1C8EAED3008E7123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63528B581C8EAED3008E7123 /* Main.storyboard */; };
+		63528B5C1C8EAED3008E7123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63528B5B1C8EAED3008E7123 /* Assets.xcassets */; };
+		63528B5F1C8EAED3008E7123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63528B5D1C8EAED3008E7123 /* LaunchScreen.storyboard */; };
+		63528B7A1C8EAEFB008E7123 /* IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B681C8EAEFB008E7123 /* IQStyle.m */; };
+		63528B7B1C8EAEFB008E7123 /* IQStyleAdvertiser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B6A1C8EAEFB008E7123 /* IQStyleAdvertiser.m */; };
+		63528B7C1C8EAEFB008E7123 /* IQStyleEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B6C1C8EAEFB008E7123 /* IQStyleEditorViewController.m */; };
+		63528B7D1C8EAEFB008E7123 /* IQStyleSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B6E1C8EAEFB008E7123 /* IQStyleSettingsViewController.m */; };
+		63528B7E1C8EAEFB008E7123 /* UIButton+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B711C8EAEFB008E7123 /* UIButton+IQStyle.m */; };
+		63528B7F1C8EAEFB008E7123 /* UIColor+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B731C8EAEFB008E7123 /* UIColor+IQStyle.m */; };
+		63528B801C8EAEFB008E7123 /* UIImageView+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B751C8EAEFB008E7123 /* UIImageView+IQStyle.m */; };
+		63528B811C8EAEFB008E7123 /* UINavigationBar+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B771C8EAEFB008E7123 /* UINavigationBar+IQStyle.m */; };
+		63528B821C8EAEFB008E7123 /* UIView+IQStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B791C8EAEFB008E7123 /* UIView+IQStyle.m */; };
+		63528B851C8EAF3F008E7123 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B841C8EAF3F008E7123 /* DiscoveryViewController.m */; };
+		63528B881C8EAFBB008E7123 /* IQStyleBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B871C8EAFBB008E7123 /* IQStyleBrowser.m */; };
+		63528B8B1C8EB04B008E7123 /* IQStyleClientInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B8A1C8EB04B008E7123 /* IQStyleClientInfo.m */; };
+		63528B8E1C8ECF33008E7123 /* EditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B8D1C8ECF33008E7123 /* EditorViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		63528B4C1C8EAED3008E7123 /* IQRemoteStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IQRemoteStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63528B501C8EAED3008E7123 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63528B521C8EAED3008E7123 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		63528B531C8EAED3008E7123 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		63528B551C8EAED3008E7123 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		63528B561C8EAED3008E7123 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		63528B591C8EAED3008E7123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63528B5B1C8EAED3008E7123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63528B5E1C8EAED3008E7123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63528B601C8EAED3008E7123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63528B671C8EAEFB008E7123 /* IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyle.h; sourceTree = "<group>"; };
+		63528B681C8EAEFB008E7123 /* IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyle.m; sourceTree = "<group>"; };
+		63528B691C8EAEFB008E7123 /* IQStyleAdvertiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleAdvertiser.h; sourceTree = "<group>"; };
+		63528B6A1C8EAEFB008E7123 /* IQStyleAdvertiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleAdvertiser.m; sourceTree = "<group>"; };
+		63528B6B1C8EAEFB008E7123 /* IQStyleEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleEditorViewController.h; sourceTree = "<group>"; };
+		63528B6C1C8EAEFB008E7123 /* IQStyleEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleEditorViewController.m; sourceTree = "<group>"; };
+		63528B6D1C8EAEFB008E7123 /* IQStyleSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleSettingsViewController.h; sourceTree = "<group>"; };
+		63528B6E1C8EAEFB008E7123 /* IQStyleSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleSettingsViewController.m; sourceTree = "<group>"; };
+		63528B701C8EAEFB008E7123 /* UIButton+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+IQStyle.h"; sourceTree = "<group>"; };
+		63528B711C8EAEFB008E7123 /* UIButton+IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+IQStyle.m"; sourceTree = "<group>"; };
+		63528B721C8EAEFB008E7123 /* UIColor+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+IQStyle.h"; sourceTree = "<group>"; };
+		63528B731C8EAEFB008E7123 /* UIColor+IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+IQStyle.m"; sourceTree = "<group>"; };
+		63528B741C8EAEFB008E7123 /* UIImageView+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+IQStyle.h"; sourceTree = "<group>"; };
+		63528B751C8EAEFB008E7123 /* UIImageView+IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+IQStyle.m"; sourceTree = "<group>"; };
+		63528B761C8EAEFB008E7123 /* UINavigationBar+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+IQStyle.h"; sourceTree = "<group>"; };
+		63528B771C8EAEFB008E7123 /* UINavigationBar+IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+IQStyle.m"; sourceTree = "<group>"; };
+		63528B781C8EAEFB008E7123 /* UIView+IQStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IQStyle.h"; sourceTree = "<group>"; };
+		63528B791C8EAEFB008E7123 /* UIView+IQStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IQStyle.m"; sourceTree = "<group>"; };
+		63528B831C8EAF3F008E7123 /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
+		63528B841C8EAF3F008E7123 /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
+		63528B861C8EAFBB008E7123 /* IQStyleBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleBrowser.h; sourceTree = "<group>"; };
+		63528B871C8EAFBB008E7123 /* IQStyleBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleBrowser.m; sourceTree = "<group>"; };
+		63528B891C8EB04B008E7123 /* IQStyleClientInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleClientInfo.h; sourceTree = "<group>"; };
+		63528B8A1C8EB04B008E7123 /* IQStyleClientInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleClientInfo.m; sourceTree = "<group>"; };
+		63528B8C1C8ECF33008E7123 /* EditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorViewController.h; sourceTree = "<group>"; };
+		63528B8D1C8ECF33008E7123 /* EditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63528B491C8EAED3008E7123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63528B431C8EAED3008E7123 = {
+			isa = PBXGroup;
+			children = (
+				63528B661C8EAEFB008E7123 /* IQStyle */,
+				63528B4E1C8EAED3008E7123 /* IQRemoteStyle */,
+				63528B4D1C8EAED3008E7123 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63528B4D1C8EAED3008E7123 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63528B4C1C8EAED3008E7123 /* IQRemoteStyle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63528B4E1C8EAED3008E7123 /* IQRemoteStyle */ = {
+			isa = PBXGroup;
+			children = (
+				63528B521C8EAED3008E7123 /* AppDelegate.h */,
+				63528B531C8EAED3008E7123 /* AppDelegate.m */,
+				63528B831C8EAF3F008E7123 /* DiscoveryViewController.h */,
+				63528B841C8EAF3F008E7123 /* DiscoveryViewController.m */,
+				63528B551C8EAED3008E7123 /* ViewController.h */,
+				63528B561C8EAED3008E7123 /* ViewController.m */,
+				63528B8C1C8ECF33008E7123 /* EditorViewController.h */,
+				63528B8D1C8ECF33008E7123 /* EditorViewController.m */,
+				63528B581C8EAED3008E7123 /* Main.storyboard */,
+				63528B5B1C8EAED3008E7123 /* Assets.xcassets */,
+				63528B5D1C8EAED3008E7123 /* LaunchScreen.storyboard */,
+				63528B601C8EAED3008E7123 /* Info.plist */,
+				63528B4F1C8EAED3008E7123 /* Supporting Files */,
+			);
+			path = IQRemoteStyle;
+			sourceTree = "<group>";
+		};
+		63528B4F1C8EAED3008E7123 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63528B501C8EAED3008E7123 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63528B661C8EAEFB008E7123 /* IQStyle */ = {
+			isa = PBXGroup;
+			children = (
+				63528B671C8EAEFB008E7123 /* IQStyle.h */,
+				63528B681C8EAEFB008E7123 /* IQStyle.m */,
+				63528B691C8EAEFB008E7123 /* IQStyleAdvertiser.h */,
+				63528B6A1C8EAEFB008E7123 /* IQStyleAdvertiser.m */,
+				63528B6B1C8EAEFB008E7123 /* IQStyleEditorViewController.h */,
+				63528B6C1C8EAEFB008E7123 /* IQStyleEditorViewController.m */,
+				63528B6D1C8EAEFB008E7123 /* IQStyleSettingsViewController.h */,
+				63528B6E1C8EAEFB008E7123 /* IQStyleSettingsViewController.m */,
+				63528B6F1C8EAEFB008E7123 /* UIKit+IQStyle */,
+				63528B861C8EAFBB008E7123 /* IQStyleBrowser.h */,
+				63528B871C8EAFBB008E7123 /* IQStyleBrowser.m */,
+				63528B891C8EB04B008E7123 /* IQStyleClientInfo.h */,
+				63528B8A1C8EB04B008E7123 /* IQStyleClientInfo.m */,
+			);
+			name = IQStyle;
+			path = ../IQStyle;
+			sourceTree = "<group>";
+		};
+		63528B6F1C8EAEFB008E7123 /* UIKit+IQStyle */ = {
+			isa = PBXGroup;
+			children = (
+				63528B701C8EAEFB008E7123 /* UIButton+IQStyle.h */,
+				63528B711C8EAEFB008E7123 /* UIButton+IQStyle.m */,
+				63528B721C8EAEFB008E7123 /* UIColor+IQStyle.h */,
+				63528B731C8EAEFB008E7123 /* UIColor+IQStyle.m */,
+				63528B741C8EAEFB008E7123 /* UIImageView+IQStyle.h */,
+				63528B751C8EAEFB008E7123 /* UIImageView+IQStyle.m */,
+				63528B761C8EAEFB008E7123 /* UINavigationBar+IQStyle.h */,
+				63528B771C8EAEFB008E7123 /* UINavigationBar+IQStyle.m */,
+				63528B781C8EAEFB008E7123 /* UIView+IQStyle.h */,
+				63528B791C8EAEFB008E7123 /* UIView+IQStyle.m */,
+			);
+			path = "UIKit+IQStyle";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63528B4B1C8EAED3008E7123 /* IQRemoteStyle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63528B631C8EAED3008E7123 /* Build configuration list for PBXNativeTarget "IQRemoteStyle" */;
+			buildPhases = (
+				63528B481C8EAED3008E7123 /* Sources */,
+				63528B491C8EAED3008E7123 /* Frameworks */,
+				63528B4A1C8EAED3008E7123 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IQRemoteStyle;
+			productName = IQRemoteStyle;
+			productReference = 63528B4C1C8EAED3008E7123 /* IQRemoteStyle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63528B441C8EAED3008E7123 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = InQBarna;
+				TargetAttributes = {
+					63528B4B1C8EAED3008E7123 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 63528B471C8EAED3008E7123 /* Build configuration list for PBXProject "IQRemoteStyle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63528B431C8EAED3008E7123;
+			productRefGroup = 63528B4D1C8EAED3008E7123 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63528B4B1C8EAED3008E7123 /* IQRemoteStyle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63528B4A1C8EAED3008E7123 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63528B5F1C8EAED3008E7123 /* LaunchScreen.storyboard in Resources */,
+				63528B5C1C8EAED3008E7123 /* Assets.xcassets in Resources */,
+				63528B5A1C8EAED3008E7123 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63528B481C8EAED3008E7123 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63528B571C8EAED3008E7123 /* ViewController.m in Sources */,
+				63528B8B1C8EB04B008E7123 /* IQStyleClientInfo.m in Sources */,
+				63528B7F1C8EAEFB008E7123 /* UIColor+IQStyle.m in Sources */,
+				63528B821C8EAEFB008E7123 /* UIView+IQStyle.m in Sources */,
+				63528B8E1C8ECF33008E7123 /* EditorViewController.m in Sources */,
+				63528B7C1C8EAEFB008E7123 /* IQStyleEditorViewController.m in Sources */,
+				63528B881C8EAFBB008E7123 /* IQStyleBrowser.m in Sources */,
+				63528B541C8EAED3008E7123 /* AppDelegate.m in Sources */,
+				63528B7B1C8EAEFB008E7123 /* IQStyleAdvertiser.m in Sources */,
+				63528B511C8EAED3008E7123 /* main.m in Sources */,
+				63528B7E1C8EAEFB008E7123 /* UIButton+IQStyle.m in Sources */,
+				63528B7D1C8EAEFB008E7123 /* IQStyleSettingsViewController.m in Sources */,
+				63528B851C8EAF3F008E7123 /* DiscoveryViewController.m in Sources */,
+				63528B811C8EAEFB008E7123 /* UINavigationBar+IQStyle.m in Sources */,
+				63528B801C8EAEFB008E7123 /* UIImageView+IQStyle.m in Sources */,
+				63528B7A1C8EAEFB008E7123 /* IQStyle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		63528B581C8EAED3008E7123 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63528B591C8EAED3008E7123 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63528B5D1C8EAED3008E7123 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63528B5E1C8EAED3008E7123 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63528B611C8EAED3008E7123 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		63528B621C8EAED3008E7123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63528B641C8EAED3008E7123 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IQRemoteStyle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iqstyle.IQRemoteStyle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		63528B651C8EAED3008E7123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IQRemoteStyle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iqstyle.IQRemoteStyle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63528B471C8EAED3008E7123 /* Build configuration list for PBXProject "IQRemoteStyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63528B611C8EAED3008E7123 /* Debug */,
+				63528B621C8EAED3008E7123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63528B631C8EAED3008E7123 /* Build configuration list for PBXNativeTarget "IQRemoteStyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63528B641C8EAED3008E7123 /* Debug */,
+				63528B651C8EAED3008E7123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63528B441C8EAED3008E7123 /* Project object */;
+}

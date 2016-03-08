@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63528B411C8EAD92008E7123 /* IQStyleAdvertiser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B3E1C8EAD92008E7123 /* IQStyleAdvertiser.m */; };
+		63528B421C8EAD92008E7123 /* IQStyleSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63528B401C8EAD92008E7123 /* IQStyleSettingsViewController.m */; };
 		63A24ED91C86F7E000C6AE48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24ED81C86F7E000C6AE48 /* main.m */; };
 		63A24EDC1C86F7E000C6AE48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EDB1C86F7E000C6AE48 /* AppDelegate.m */; };
 		63A24EDF1C86F7E000C6AE48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A24EDE1C86F7E000C6AE48 /* ViewController.m */; };
@@ -26,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63528B3D1C8EAD92008E7123 /* IQStyleAdvertiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleAdvertiser.h; sourceTree = "<group>"; };
+		63528B3E1C8EAD92008E7123 /* IQStyleAdvertiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleAdvertiser.m; sourceTree = "<group>"; };
+		63528B3F1C8EAD92008E7123 /* IQStyleSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQStyleSettingsViewController.h; sourceTree = "<group>"; };
+		63528B401C8EAD92008E7123 /* IQStyleSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQStyleSettingsViewController.m; sourceTree = "<group>"; };
 		63A24ED41C86F7E000C6AE48 /* IQStyleSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IQStyleSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A24ED81C86F7E000C6AE48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63A24EDA1C86F7E000C6AE48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +119,10 @@
 		63A24EEE1C86F82F00C6AE48 /* IQStyle */ = {
 			isa = PBXGroup;
 			children = (
+				63528B3D1C8EAD92008E7123 /* IQStyleAdvertiser.h */,
+				63528B3E1C8EAD92008E7123 /* IQStyleAdvertiser.m */,
+				63528B3F1C8EAD92008E7123 /* IQStyleSettingsViewController.h */,
+				63528B401C8EAD92008E7123 /* IQStyleSettingsViewController.m */,
 				63A24EEF1C86F82F00C6AE48 /* IQStyle.h */,
 				63A24EF01C86F82F00C6AE48 /* IQStyle.m */,
 				63A24EF11C86F82F00C6AE48 /* IQStyleEditorViewController.h */,
@@ -213,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63528B411C8EAD92008E7123 /* IQStyleAdvertiser.m in Sources */,
 				63A24EDF1C86F7E000C6AE48 /* ViewController.m in Sources */,
 				63A24EDC1C86F7E000C6AE48 /* AppDelegate.m in Sources */,
 				63A24ED91C86F7E000C6AE48 /* main.m in Sources */,
@@ -221,6 +232,7 @@
 				63A24F041C86F82F00C6AE48 /* UIView+IQStyle.m in Sources */,
 				63A24F031C86F82F00C6AE48 /* UINavigationBar+IQStyle.m in Sources */,
 				63A24EFF1C86F82F00C6AE48 /* IQStyleEditorViewController.m in Sources */,
+				63528B421C8EAD92008E7123 /* IQStyleSettingsViewController.m in Sources */,
 				63A7D54F1C89D40100635592 /* UIImageView+IQStyle.m in Sources */,
 				63A24F021C86F82F00C6AE48 /* UIColor+IQStyle.m in Sources */,
 			);
@@ -335,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IQStyleSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iqstyle.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IQStyleSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iqstyle.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

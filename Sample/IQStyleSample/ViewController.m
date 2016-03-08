@@ -24,6 +24,7 @@
 #import "ViewController.h"
 #import "IQStyle.h"
 #import "IQStyleEditorViewController.h"
+#import "IQStyleSettingsViewController.h"
 
 @interface ViewController ()
 
@@ -45,6 +46,11 @@
     [super viewDidLoad];
     [self registerForStyleChanges];
     self.title = @"MOVIES";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Config"
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(openSettings:)];
 }
 
 #pragma mark -
@@ -55,6 +61,12 @@
     IQStyleEditorViewController *vc = [[IQStyleEditorViewController alloc] init];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)openSettings:(id)sender
+{
+    IQStyleSettingsViewController *vc = [[IQStyleSettingsViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -
