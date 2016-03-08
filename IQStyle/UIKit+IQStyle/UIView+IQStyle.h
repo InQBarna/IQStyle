@@ -24,7 +24,6 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
 @interface UIView (IQStyle)
 @property (nonatomic, strong, nullable) NSString  *fontTag;
 @property (nonatomic, strong, nullable) NSString  *textColorTag;
@@ -32,14 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) NSString  *borderColorTag;
 @property (nonatomic, strong, nullable) NSNumber  *borderAlpha;
 @property (nonatomic, strong, nullable) NSString  *tintTag;
-
 - (void)updateFontFromTag;
 - (void)updateBackgroundColorFromTag;
 - (void)updateTextColorFromTag;
 - (void)updateBorderColorFromTag;
 - (void)updateTintFromTag;
-
 - (void)applyStyle;
 @end
-
 NS_ASSUME_NONNULL_END

@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_END
 {
     [super viewWillAppear:animated];
     [self sendColor:nil forTag:nil];
-    
+    self.title = _peerID.displayName;
     self.navigationItem.rightBarButtonItem = nil;
 }
 

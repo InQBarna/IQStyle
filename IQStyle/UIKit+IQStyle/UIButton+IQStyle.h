@@ -24,12 +24,8 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
 @interface UIButton (IQStyle)
 @property (nonatomic, strong, nullable) NSString  *titleColorTag;
-
 - (void)updateTitleColorFromTag;
-
 @end
-
 NS_ASSUME_NONNULL_END

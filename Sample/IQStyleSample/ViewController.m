@@ -37,14 +37,16 @@ NS_ASSUME_NONNULL_END
 #pragma mark -
 #pragma mark NSObject methods
 
-- (void)dealloc {
+- (void)dealloc
+{
     [self unregisterForStyleChanges];
 }
 
 #pragma mark -
 #pragma mark UIViewController methods
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self registerForStyleChanges];
     self.title = @"MOVIES";
@@ -62,7 +64,7 @@ NS_ASSUME_NONNULL_END
 {
     IQStyleEditorViewController *vc = [[IQStyleEditorViewController alloc] init];
     vc.delegate = self;
-    vc.styleDictionary = [[IQStyle styleDictionary] objectForKey:@"Colors"];
+    vc.styleDictionary = [IQStyle styleDictionary];
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nc animated:YES completion:nil];
 }
@@ -83,7 +85,8 @@ NS_ASSUME_NONNULL_END
 #pragma mark -
 #pragma mark IQStyleProtocol methods
 
-- (void)styleDidChange {
+- (void)styleDidChange
+{
     if(self.navigationController) {
         [self.navigationController.navigationBar performSelector:@selector(applyStyle)];
     }
@@ -98,7 +101,7 @@ NS_ASSUME_NONNULL_END
              forTag:(NSString*)tag
 {
     [IQStyle setColor:color forTag:tag];
-    editor.styleDictionary = [[IQStyle styleDictionary] objectForKey:@"Colors"];
+    editor.styleDictionary = [IQStyle styleDictionary];
 }
 
 @end

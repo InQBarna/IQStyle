@@ -24,17 +24,12 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
 @interface UIColor (IQStyle)
-
 + (nullable UIColor*)colorWithTag:(NSString*)tag;
-
 + (nullable UIColor*)colorWithHexString:(NSString *)stringToConvert;
 + (UIColor*)randomColor;
 - (NSString*)htmlColor;
 - (NSString*)toString;
 - (UIColor*)inverted;
-
 @end
-
 NS_ASSUME_NONNULL_END

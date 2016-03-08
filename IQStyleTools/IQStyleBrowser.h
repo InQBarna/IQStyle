@@ -26,22 +26,19 @@
 #import "IQStyleClientInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
 @protocol IQStyleBrowserDelegate;
 
 @interface IQStyleBrowser : NSObject
-@property (nullable, nonatomic, weak) id<IQStyleBrowserDelegate>  delegate;
+@property (nonatomic, weak, nullable) id<IQStyleBrowserDelegate>  delegate;
 
 - (void)startBrowsing;
 - (NSArray<IQStyleClientInfo*>*)list;
 - (void)stopBrowsing;
-
-- (void)connectToClient:(IQStyleClientInfo*)info completion:(void(^)(MCPeerID *peerID, MCSession *session, NSError *error))block;
+- (void)connectToClient:(IQStyleClientInfo*)info completion:(void(^)(MCPeerID * _Nullable peerID, MCSession * _Nullable session, NSError * _Nullable error))block;
 @end
 
 @protocol IQStyleBrowserDelegate <NSObject>
 @required
 - (void)serviceBrowserDidUpdateList:(IQStyleBrowser*)browser;
 @end
-
 NS_ASSUME_NONNULL_END

@@ -24,14 +24,11 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
 @interface IQStyleClientInfo : NSObject
-@property (nullable, nonatomic, readonly) NSString *identifier;
-@property (nullable, nonatomic, readonly) NSString *displayName;
-@property (nullable, nonatomic, readonly) NSString *deviceName;
-@property (nullable, nonatomic, readonly) NSString *deviceModel;
-
+@property (nonatomic, readonly, nullable) NSString *identifier;
+@property (nonatomic, readonly, nullable) NSString *displayName;
+@property (nonatomic, readonly, nullable) NSString *deviceName;
+@property (nonatomic, readonly, nullable) NSString *deviceModel;
 - (id)initWithDictionary:(NSDictionary*)d;
 @end
-
 NS_ASSUME_NONNULL_END

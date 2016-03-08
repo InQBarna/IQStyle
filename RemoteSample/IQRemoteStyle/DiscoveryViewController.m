@@ -26,11 +26,9 @@
 #import "EditorViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
 @interface DiscoveryViewController ()<IQStyleBrowserDelegate>
 @property (nonatomic, strong, nullable) IQStyleBrowser      *browser;
 @end
-
 NS_ASSUME_NONNULL_END
 
 @implementation DiscoveryViewController
@@ -40,21 +38,14 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Browse…";
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Disconnect"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
     self.browser = [[IQStyleBrowser alloc] init];
     self.browser.delegate = self;
     [self.browser startBrowsing];
-}
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"editShow"]) {
-        EditorViewController *vc = (EditorViewController*)segue.destinationViewController;
-        NSDictionary *d = (NSDictionary*)sender;
-        MCSession *session = [d objectForKey:@"session"];
-        MCPeerID *peerID = [d objectForKey:@"peerID"];
-        [vc setupWithPeerID:peerID session:session];
-    }
 }
 
 #pragma mark -

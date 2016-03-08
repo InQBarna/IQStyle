@@ -35,5 +35,4 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 - (void)styleEditor:(IQStyleEditorViewController*)editor didSelectColor:(UIColor*)color forTag:(NSString*)tag;
 @end
-
 NS_ASSUME_NONNULL_END

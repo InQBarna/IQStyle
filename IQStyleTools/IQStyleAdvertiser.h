@@ -24,15 +24,11 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
 extern NSString *const IQStyleServiceName;
 
 @interface IQStyleAdvertiser : NSObject
 @property (nonatomic, readonly) BOOL  isAdvertising;
-
 - (void)startAdvertising;
 - (void)stopAdvertising;
-
 @end
-
 NS_ASSUME_NONNULL_END

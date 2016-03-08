@@ -24,13 +24,10 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
 @interface UINavigationBar (IQStyle)
 @property (nonatomic, strong, nullable) NSString  *barTintTag;
 @property (nonatomic, strong, nullable) NSString  *titleTextColorTag;
-
 - (void)updateBarTintFromTag;
 - (void)updateTitleTextColorFromTag;
 @end
-
 NS_ASSUME_NONNULL_END
