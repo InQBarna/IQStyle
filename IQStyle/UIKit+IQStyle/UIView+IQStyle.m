@@ -107,6 +107,33 @@
 }
 
 #pragma mark -
+#pragma mark Highlighted Text Color Tag methods
+@dynamic highlightedTextColorTag;
+
+- (void)setHighlightedTextColorTag:(NSString *)highlightedTextColorTag
+{
+    objc_setAssociatedObject(self, @selector(highlightedTextColorTag), highlightedTextColorTag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self updateHighlightedTextColorFromTag];
+}
+
+- (NSString *)highlightedTextColorTag {
+    return objc_getAssociatedObject(self, @selector(highlightedTextColorTag));
+}
+
+- (void)updateHighlightedTextColorFromTag {
+    NSString *tag = self.highlightedTextColorTag;
+    if(!tag) {
+        return;
+    }
+    if([self respondsToSelector:@selector(setHighlightedTextColor:)]) {
+        UIColor *color = [IQStyle colorWithTag:tag];
+        if(color) {
+            [self setValue:color forKey:@"highlightedTextColor"];
+        }
+    }
+}
+
+#pragma mark -
 #pragma mark Border Color Tag methods
 @dynamic borderColorTag;
 
